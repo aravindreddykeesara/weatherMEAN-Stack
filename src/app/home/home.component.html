@@ -1,0 +1,149 @@
+<div class="flexsearch">
+  <div class="flexsearch--wrapper">
+    <form class="flexsearch--form" action="#" method="post">
+      <div class="flexsearch--input-wrapper">
+        <input class="flexsearch--input" type="search" placeholder="search">
+        <a>
+          <img class="flexsearch--submit responsive" type="submit" src="/assets/searchbutton.png">
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="weather-card one">
+        <div class="top">
+          <div class="wrapper">
+            <div class="mynav">
+              <div id="navleft" class="float-left">
+                <img src="/assets/wind-sign.png">
+                <span>{{currdata.windSpeed.toFixed(0)}}mph</span>
+              </div>
+              <div class="float-center">
+
+                <img src="/assets/cloudycover.png">
+                <span>{{(currdata.cloudCover*100).toFixed(0)}}%</span>
+
+              </div>
+              <div class="float-right">
+                <img src="/assets/humidity.png">
+                <span>{{currdata.humidity*100}}%</span>
+              </div>
+
+
+
+            </div>
+
+            <canvas id="curricon" class="currrenticon"></canvas>
+            <p class="temp">
+              <span class="temp-value">{{currdata.temperature.toFixed(0) }}</span>
+              <span class="deg">0</span>
+              <a href="javascript:;">
+                <!-- <span class="temp-type">F</span> -->
+                <span class="heading">{{currdata.summary}}</span>
+              </a>
+            </p>
+
+            <div class="mynav">
+              <div id="navleft" class="float-left">
+                Feels like
+                <span>: {{currdata.apparentTemperature.toFixed(0)}}</span>
+                <span class="deg">0</span>
+              </div>
+              <div class="float-center">
+
+                <img src="/assets/hightemp.png">
+                <span>{{dailyData[0].temperatureHigh.toFixed(0)}}</span>
+                <span class="deg">0</span>
+              </div>
+              <div class="float-right">
+                <img src="/assets/lowtemp.png">
+                <span>{{dailyData[0].temperatureLow.toFixed(0)}}</span>
+                <span class="deg">0</span>
+              </div>
+
+            </div>
+          </div>
+          <!-- bottom starts -->
+          <div class="bottom">
+            <div class="wrapper">
+              <ul class="forecast">
+                <a href="javascript:;">
+                  <span class="lnr go-up">{{dailyData.summary}}</span>
+                </a>
+                <span style=" display:block;width:32px;height:32px">
+                  <canvas id="curricon" class="currrenticon"></canvas>
+                  <canvas width="64" height="64" style="width: 100%;height: 100%" class="icon2"></canvas>
+                </span>
+                <li *ngFor="let dailystats of dailyData" class="active">
+                  <span class="date">{{dailystats.time}}</span>
+
+                  <img src="/assets/weathericons/{{dailystats.icon}}.png">
+                  <span class="lnr">
+                    <img src="/assets/up-arrow.png">
+                    <span class="temp">{{dailystats.temperatureHigh.toFixed(0)}}</span>
+                    <span class="deg">0</span>
+                    <img src="/assets/down-arrow.png">
+                    <span class="temp">{{dailystats.temperatureLow.toFixed(0)}}</span>
+                    <span class="deg">0</span>
+                  </span>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-- wait -->
+
+
+          <!--botton here  -->
+
+        </div>
+      </div>
+
+
+
+
+      <!-- <div class="bottom">
+  <div class="wrapper">
+    <ul class="forecast">
+      <a href="javascript:;">
+        <span class="lnr lnr-chevron-up go-up"></span>
+      </a>
+      <span style=" display:block;width:32px;height:32px">
+        <canvas id="curricon" class="currrenticon"></canvas>
+        <!-- <canvas width="64" height="64" style="width: 100%;height: 100%" class="icon2"></canvas>
+      </span>
+      <li *ngFor="let dailystats of dailyData" class="active">
+        <span class="date">{{dailystats.time}}</span>
+
+
+        <span class="lnr">
+          <img src="/assets/hightemp.png">
+          <span class="temp">{{dailystats.temperatureHigh.toFixed(0)}}</span>
+          <span class="deg">0</span>
+          <img src="/assets/lowtemp.png">
+          <span class="temp">{{dailystats.temperatureLow.toFixed(0)}}</span>
+          <span class="deg">0</span>
+        </span>
+
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+
+
+
+      <!-- <span class="lnr lnr-sun condition">
+  <span class="temp">23
+    <span class="deg">0</span>
+    <span class="temp-type">C</span>
+  </span>
+</span> -->
+

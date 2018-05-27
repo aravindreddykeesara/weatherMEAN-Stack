@@ -1,0 +1,335 @@
+@import '~compass-mixins/lib/compass/css3';
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
+@import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+body {
+  font-family: 'Montserrat', sans-serif; //background: #112233;
+}
+
+/***********************
+ * Essential Structure *
+ ***********************/
+
+.flexsearch--wrapper {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  background: transparent;
+  margin: 0;
+  position: static;
+}
+
+.flexsearch--form {
+  overflow: hidden;
+  position: relative;
+}
+
+.flexsearch--input-wrapper {
+  padding: 0 66px 0 0;
+  /* Right padding for submit button width */
+  overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+
+.flexsearch {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%; //padding: 0 25px 0 200px;
+  /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 5vh;
+  padding: 0 46px 0 10px;
+  border-color: #888;
+  border-radius: 35px;
+  /* (height/2) + border-width */
+  border-style: solid;
+  border-width: 5px;
+  margin-top: 15px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 26px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.flexsearch--submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  max-width: 50px;
+  max-height: 50px; //height: auto;
+  padding: 0;
+  border: none;
+  padding-top: 10px;
+  margin-top: 12px;
+  /* margin-top + border-width */
+  margin-right: 10px;
+  /* border-width */
+  background: transparent;
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+  color: #333;
+}
+
+.flexsearch--submit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+input:-moz-placeholder {
+  color: #888
+}
+
+/****************
+ * Pretify demo *
+ ****************/
+
+.h1 {
+  float: left;
+  margin: 25px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  text-align: center;
+}
+
+// weather card css
+.weather-card {
+  margin: 60px auto; // max-height:60vh;
+  max-width: 700px;
+  background: #f0f8ff; // opacity: .95;
+  box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.weather-card .top {
+  position: relative;
+  height: 100vh;
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  background: rgb(240, 248, 255);
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+
+.weather-card .top .wrapper {
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.weather-card .top .wrapper .mynav {
+  height: 20px;
+}
+
+.weather-card .top .wrapper .mynav .lnr {
+  color: #000;
+  font-size: 20px;
+}
+
+.weather-card .top .wrapper .mynav .float-center {
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  text-align: center; // margin-left: -1%;
+}
+
+.weather-card .top .wrapper .mynav .float-left {
+  display: inline-block;
+  float: left;
+  font-size: 20px;
+  color: #000;
+}
+
+.weather-card .top .wrapper .mynav .float-right {
+  //display: inline-block;
+  position: relative;
+  ;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 300;
+  color: #000;
+}
+
+.weather-card .top .wrapper .heading {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 500;
+  color: #000;
+  transform: translate(0, -20%);
+  margin-top: 10px;
+}
+
+.weather-card .top .wrapper .currrenticon {
+  margin-top: 20px;
+  font-size: 21px;
+  font-weight: 400;
+  color: #000;
+}
+
+.weather-card .top .wrapper .temp {
+  margin-top: 20px;
+}
+
+.weather-card .top .wrapper .temp a {
+  text-decoration: none;
+  color: #000;
+}
+
+.weather-card .top .wrapper .temp a .temp-type {
+  font-size: 85px;
+}
+
+.weather-card .top .wrapper .temp .temp-value {
+  display: inline-block;
+  font-size: 75px;
+  font-weight: 600;
+  color: #000;
+}
+
+.weather-card .top .wrapper .temp .deg {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 600;
+  color: #000;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.weather-card .top:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0; // background: rgba(0, 0, 0, 0.5);
+}
+
+.weather-card .mynav .deg {
+  display: inline-block;
+  font-size: 10px;
+  vertical-align: top;
+  color: #000;
+  margin-top: 2%;
+}
+
+.weather-card .bottom {
+  padding: 0 30px;
+  background: #fff;
+}
+
+.weather-card .bottom .wrapper .forecast {
+  overflow: hidden;
+  margin: 0;
+  font-size: 0;
+  padding: 0;
+  padding-top: 20px; //height: 100vh;
+}
+
+.weather-card .bottom .wrapper .forecast a {
+  text-decoration: none;
+  color: #000;
+}
+
+.weather-card .bottom .wrapper .forecast .go-up {
+  text-align: left;
+  display: block;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.weather-card .bottom .wrapper .forecast li {
+  display: block;
+  font-size: 25px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.25);
+  line-height: 1em;
+  margin-bottom: 30px;
+}
+
+.weather-card .bottom .wrapper .forecast li .date {
+  display: inline-block;
+  text-align: left; //float:left;
+}
+
+.weather-card .bottom .wrapper .forecast li .condition {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  font-size: 25px;
+}
+
+.weather-card .bottom .wrapper .forecast li .temp {
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  transform: translate(0, -70%);
+  font-weight: 400; // padding-top: 2px;
+}
+
+.weather-card .bottom .wrapper .forecast li .deg {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400; //margin-left: 3px;
+  vertical-align: top;
+}
+
+.weather-card .bottom .wrapper .forecast li .condition .temp .temp-type {
+  font-size: 20px;
+}
+
+.weather-card .bottom .wrapper .forecast li.active {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.bottomcanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  float: left;
+  margin: 7px 0 0 6px;
+  box-sizing: border-box;
+}
+
+.weather-card.rain .top {
+  background: url("http://img.freepik.com/free-vector/girl-with-umbrella_1325-5.jpg?size=338&ext=jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+//skycons
+

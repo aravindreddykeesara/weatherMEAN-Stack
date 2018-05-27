@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="modal" data-target="#myModal">Login</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content modal-lg">
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="container">
+
+          
+              <div class="panel panel-login">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-6">
+                      <a href="#" class="active" id="admin-login-link">Admin</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="#" id="shopkeeper-login-link">StoreKeeper</a>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+
+                      <!-- form signup -->
+                      <div class="container">
+
+                        <div *ngIf="!emailid;else forminfo">
+                          <form id ="admin-login" [formGroup]="rForm" (ngSubmit)="addUser(rForm.value)">
+                            <div class="form-group">
+                            <input type="email" formControlName="emailid" tabindex="1" class="form-control" placeholder="email id" required>
+                          </div>
+                          <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">enter a valid email</div>
+
+                          <div class="form-group">
+                            <input type="password" formControlName="password" tabindex="1" class="form-control" placeholder="password" required>
+                          </div>
+                          <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">minimum password length is 4 characters</div>
+
+                          <div class="form-group">
+									         <div class="row">
+										    	   <div class="col-sm-6 col-sm-offset-3">
+											    	  <button type = "submit" tabindex="4" class="form-control btn btn-admin-login" [disabled]="!rForm.valid">Login</button>
+											       </div>
+										      </div>
+								      	</div> 
+                        </form>
+                        </div> 
+                        
+                           <ng-template #forminfo>
+                          <h4>{{emailid}}</h4>
+                        </ng-template>
+                        
+                    
+                        
+
+
+                        <!-- form signup ends -->
+
+
+                        <form id="shopkeeper-login" role="form" style="display: none;">
+                          <div class="form-group">
+                            <input type="text" name="username" id="shopkeeperUsername" tabindex="1" class="form-control" placeholder="Username" value="">
+                          </div>
+                          <div class="form-group">
+                            <input type="password" name="password" id="shopkeeperPassword" tabindex="2" class="form-control" placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-sm-6 col-sm-offset-3">
+                                <button type="button" name="action" value="shopkeeperLogin" id="shopkeeper-login-submit" tabindex="4" class="form-control btn btn-shopkeeper-login">Log in </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
