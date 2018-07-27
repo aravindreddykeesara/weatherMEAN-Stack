@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+.footer-bottom {
+  background-color: #888;
+  min-height: 30px;
+  width: 100%;
+}
+
+.copyright {
+  color: #fff;
+  line-height: 30px;
+  min-height: 30px;
+  padding: 7px 0;
+}
+
+.design {
+  color: #fff;
+  line-height: 30px;
+  min-height: 30px;
+  padding: 7px 0;
+  text-align: right;
+}
+
+.design a {
+  color: #fff;
+}

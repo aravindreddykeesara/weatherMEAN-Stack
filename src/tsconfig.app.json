@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
      "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": "https://aravind-reddy-keesara.herokuapp.com/",
     "module": "es2015",
     "types": []
   },
